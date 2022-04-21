@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   // creating my game squares
   createSquares();
+  setPieces();
 });
 
 // creates my games squares, with id's that are 0 indexed
