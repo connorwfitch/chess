@@ -23,11 +23,11 @@ function createSquares() {
 
 function squareClicked(e) {
   // actions upon a square being clicked
-  let old = document.querySelectorAll('.yhighlighted');
-  old.forEach(ele => ele.classList.toggle('yhighlighted'));
+  let old = document.querySelectorAll('.rhighlighted');
+  old.forEach(ele => ele.classList.toggle('rhighlighted'));
 
   let currentSquare = e.target;
-  currentSquare.classList.toggle('yhighlighted');
+  currentSquare.classList.toggle('rhighlighted');
 }
 
 function determineColor(square, i) {
