@@ -1,0 +1,12 @@
+TEXT FILE FOR STORING MY CLI COMMANDS
+
+- Install express, pug, and morgan
+npm install express@^4.0.0 pug@^2.0.0 morgan
+
+- Install nodemon
+npm install nodemon@^2.0.0 --save-dev
+
+- Install dotenv
+npm install dotenv dotenv-cli --save-dev
+
+- Run the app
