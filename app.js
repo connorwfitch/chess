@@ -5,9 +5,12 @@ const express = require('express');
 const app = express();
 app.set('view engine', 'pug');
 
+app.use(express.static('./public'))
+
 // primary (and only?) get request
 app.get('/', (req, res) => {
   res.render('index');
+  // res.sendFile('index.html');
 });
 
 const port = 5001;

@@ -1,6 +1,4 @@
-import { setPieces, pieces } from './piece.js';
-
-const squareObj = {};
+import { setPieces, pieces, squareObj } from './piece.js';
 
 document.addEventListener("DOMContentLoaded", () => {
   // creating my game squares

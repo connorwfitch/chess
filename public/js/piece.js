@@ -1,9 +1,9 @@
 export function setPieces() {
   // rooks
-  new Rook('black', '0-0');
-  new Rook('black', '0-7');
-  new Rook('white', '7-0');
-  new Rook('white', '7-7');
+  new Rook('black', '0-0', false);
+  new Rook('black', '0-7', false);
+  new Rook('white', '7-0', false);
+  new Rook('white', '7-7', false);
 
   // knights
   new Knight('black', '0-1');
@@ -22,13 +22,15 @@ export function setPieces() {
   new Queen('white', '7-3');
 
   // kings
-  new King('black', '0-4');
-  new King('white', '7-4');
+  new King('black', '0-4', false);
+  new King('white', '7-4', false);
 
   // pawns
 }
 
 export const pieces = [];
+
+export const squareObj = {};
 
 class Piece {
   constructor(color, square) {
@@ -50,6 +52,10 @@ class Knight extends Piece {
   constructor(color, square) {
     super(color, square);
   }
+
+  getAvaiableMoves() {
+    // foo
+  }
 }
 
 class Bishop extends Piece {
@@ -59,7 +65,7 @@ class Bishop extends Piece {
 }
 
 class Rook extends Piece {
-  constructor(color, square) {
+  constructor(color, square, moved) {
     super(color, square);
     // giving a moved boolean for castling
     this.moved = moved;
@@ -73,7 +79,7 @@ class Queen extends Piece {
 }
 
 class King extends Piece {
-  constructor(color, square) {
+  constructor(color, square, moved) {
     super(color, square);
     // giving a moved boolean for castling
     this.moved = moved;
