@@ -1,3 +1,5 @@
+// import { setPieces, pieces} from './piece.js';
+
 const squareObj = {};
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -32,7 +34,10 @@ function squareClicked(e) {
   old.forEach(ele => ele.classList.toggle('rhighlighted'));
 
   let currentSquare = e.target;
-  currentSquare.classList.toggle('rhighlighted');
+  if (currentSquare.piece) {
+    currentSquare.classList.toggle('rhighlighted');
+    // const availableSquares = currentSquare.piece.getAvaiableMoves();
+  }
 }
 
 function determineColor(square, i, j) {
