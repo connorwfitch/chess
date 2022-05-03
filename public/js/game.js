@@ -27,14 +27,19 @@ function createSquares() {
 }
 
 function squareClicked(e) {
-  // actions upon a square being clicked
+  // get rid of previous target square
   let old = document.querySelectorAll('.rhighlighted');
   old.forEach(ele => ele.classList.toggle('rhighlighted'));
+
+  // get rid of previous available squares
+  old = document.querySelectorAll('.bhighlighted');
+  old.forEach(ele => ele.classList.toggle('bhighlighted'));
 
   let currentSquare = e.target;
   if (currentSquare.piece) {
     currentSquare.classList.toggle('rhighlighted');
-    // const availableSquares = currentSquare.piece.getAvaiableMoves();
+    const availableSquares = currentSquare.piece.getAvaiableMoves();
+    availableSquares.forEach(ele => ele.classList.add('bhighlighted'));
   }
 }
 

@@ -42,6 +42,11 @@ div.black {
 }
 
 div.rhighlighted {
-  box-shadow: 0px 0px 5px 5px #C14953;
+  box-shadow: 0px 0px 3px 3px #C14953;
+  z-index: 5;
+}
+
+div.bhighlighted {
+  box-shadow: 0px 0px 3px 3px rgb(0, 106, 255);
   z-index: 5;
 }

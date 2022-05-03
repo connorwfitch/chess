@@ -26,6 +26,10 @@ export function setPieces() {
   new King('white', '7-4', false);
 
   // pawns
+  for (let j = 0; j < 8; j++) {
+    new Pawn('black', `1-${j}`, false);
+    new Pawn('white', `6-${j}`, false);
+  }
 }
 
 export const pieces = [];
@@ -43,8 +47,30 @@ class Piece {
 }
 
 class Pawn extends Piece {
-  constructor(color, square) {
+  constructor(color, square, moved) {
     super(color, square);
+    this.moved = moved;
+  }
+
+  getAvaiableMoves() {
+    const direction = this.color === 'black' ? 1 : -1;
+
+    let [row, col] = this.square.split('-');
+
+    row = parseInt(row);
+    col = parseInt(col);
+    
+
+    const out = [];
+
+    const front = squareObj[`${row + direction}-${col}`];
+    if (front && !front.piece) out.push(front);
+
+    if(!this.moved) {
+      const doubleFront = squareObj[`${row + direction * 2}-${col}`];
+      if (doubleFront && !doubleFront.piece) out.push(doubleFront);
+    }
+    return out;
   }
 }
 
@@ -62,6 +88,10 @@ class Bishop extends Piece {
   constructor(color, square) {
     super(color, square);
   }
+
+  getAvaiableMoves() {
+    // foo
+  }
 }
 
 class Rook extends Piece {
@@ -70,11 +100,19 @@ class Rook extends Piece {
     // giving a moved boolean for castling
     this.moved = moved;
   }
+
+  getAvaiableMoves() {
+    
+  }
 }
 
 class Queen extends Piece {
   constructor(color, square) {
     super(color, square);
+  }
+
+  getAvaiableMoves() {
+    // foo
   }
 }
 
@@ -83,5 +121,9 @@ class King extends Piece {
     super(color, square);
     // giving a moved boolean for castling
     this.moved = moved;
+  }
+
+  getAvaiableMoves() {
+    // foo
   }
 }
