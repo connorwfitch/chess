@@ -28,7 +28,7 @@ export function setPieces() {
   // pawns
 }
 
-export let pieces = [];
+export const pieces = [];
 
 class Piece {
   constructor(color, square) {

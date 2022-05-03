@@ -1,4 +1,4 @@
-// import { setPieces, pieces} from './piece.js';
+import { setPieces, pieces } from './piece.js';
 
 const squareObj = {};
 

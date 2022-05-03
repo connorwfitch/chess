@@ -10,3 +10,4 @@ npm install nodemon@^2.0.0 --save-dev
 npm install dotenv dotenv-cli --save-dev
 
 - Run the app
+npm start
