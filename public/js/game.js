@@ -38,7 +38,7 @@ function squareClicked(e) {
   let currentSquare = e.target;
   if (currentSquare.piece) {
     currentSquare.classList.toggle('rhighlighted');
-    const availableSquares = currentSquare.piece.getAvaiableMoves();
+    const [availableSquares, attackSquares] = currentSquare.piece.getAvaiableMoves();
     availableSquares.forEach(ele => ele.classList.add('bhighlighted'));
   }
 }

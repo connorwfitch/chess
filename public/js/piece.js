@@ -70,7 +70,7 @@ class Pawn extends Piece {
       const doubleFront = squareObj[`${row + direction * 2}-${col}`];
       if (doubleFront && !doubleFront.piece) out.push(doubleFront);
     }
-    return out;
+    return [out, []];
   }
 }
 
@@ -80,7 +80,29 @@ class Knight extends Piece {
   }
 
   getAvaiableMoves() {
-    // foo
+    const availableSquares = [];
+    const attackSquares = [];
+    let [row, col] = this.square.split('-');
+
+    row = parseInt(row);
+    col = parseInt(col);
+
+    let coords = [
+      [row + 2, col + 1],
+      [row + 2, col - 1],
+      [row + 1, col + 2],
+      [row + 1, col - 2],
+      [row - 2, col + 1],
+      [row - 2, col - 1],
+      [row - 1, col + 2],
+      [row - 1, col - 2],
+    ]
+
+    for (let coord of coords) {
+      const potentialSpace = squareObj[`${coord[0]}-${coord[1]}`];
+      if(potentialSpace && !potentialSpace.piece) availableSquares.push(potentialSpace);
+    }
+    return [availableSquares, attackSquares];
   }
 }
 
